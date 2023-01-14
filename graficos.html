@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aqui esta o maldito sistema</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="allcode">
+        <form  autocomplete="on">
+            <div class="container-form">
+                <label for="angulo">
+                  </label>
+                 <input type="text" id="angulo" autocomplete="dados-do-angulo">
+            </div>
+            <div class="container-form">
+                <label for="intensidadeDoVento"></label>
+                <input type="text" id="intensidadeDoVento" autocomplete="intensidade-do-vento">
+            </div><br>
+            <button id="botton-generate-graphic" type="button">garar grafico</button>
+        </form>
+        
+    </div>
+    
+    <script>
+        /* codigo para estilos computados (nao sera mais usado para os estilos computados) */
+        
+        </script>
+        <!--codigo para estilos computados (nao sera mais usado para os estilos computados)-->
+    <script>   
+    /*     
+        var minsize = 500
+        var tela = screen.availWidth 
+        var available
+        //verificando se a tela e maior que 500px
+        if (minsize>tela){
+            available = false
+        }
+        else{
+             available = true
+        }
+        if (available){
+            
+        }
+        else{
+            document.querySelector('.allcode').style.display = "none"
+            var tamanhoInsuficiente = document.createElement('div')
+            tamanhoInsuficiente.style.width = 80 + "vw"
+            tamanhoInsuficiente.style.height = 60 + "vh"
+            tamanhoInsuficiente.style.fontSize = 3 + "vw"
+            tamanhoInsuficiente.style.textAlign = "center"
+            var paragrafodeaviso = documet.createElement("p")
+            document.body.appendChild(tamanhoInsuficiente)
+            tamanhoInsuficiente.appendChild(paragrafodeaviso)
+
+
+        }
+        */
+        var cont = true;
+        function verificarOTamanhoDaTelaEBotarOAviso(){
+            if (cont){
+                var minsize = 500;
+                var tela = screen.availWidth;
+                var available;
+
+                if (minsize>tela){
+                    available = false;
+                }
+                else{
+                    available = true;
+                }
+
+                if (!available){
+                    document.querySelector('.allcode').style.display = "none";
+                    var tamanhoInsuficiente = document.createElement("div");
+                    tamanhoInsuficiente.style.cssText = `position: absolute; top:50%; left:50%; transform: translate(-50%, -50%); box-shadow:2px 2px 7px rgba(177,177,177,0.5);display: flex; align-items: center; justify-content: center;border-radius:5px;`
+                    var paragrafodeaviso = document.createElement("p");
+                    paragrafodeaviso.innerHTML = "This page only works on larger devices " +`<br>&#x1F635;&#x1F4AB;<br><span></span>`;
+                    document.body.appendChild(tamanhoInsuficiente);
+                    tamanhoInsuficiente.appendChild(paragrafodeaviso);
+                    tamanhoInsuficiente.style.width = "80vw";
+                    tamanhoInsuficiente.style.height = "60vh";
+                    tamanhoInsuficiente.style.fontSize = "5vw";
+                    tamanhoInsuficiente.style.textAlign = "center";
+                }
+                cont = false;
+            }
+        }
+        verificarOTamanhoDaTelaEBotarOAviso()
+        function obterViewportDisponivelWidth(){
+          return screen.availWidth;
+        }
+        function obterViewportDisponivelHeight(){
+          return screen.availHeight;
+        }
+        var allcode =  document.querySelector('.allcode');
+        allcode.style.width = obterViewportDisponivelWidth() +  "px"
+        allcode.style.height = obterViewportDisponivelHeight() + "px"
+
+
+        //window.addEventListener('resize', verificarOTamanhoDaTelaEBotarOAviso)
+    </script>
+    <script>
+        class Overlay {
+            constructor() {
+                this.overlay = null;
+                this.shouldClose = false;
+            }
+            createOverlay() {
+                this.overlay = document.createElement('div');
+                this.overlay.style.position = 'fixed';
+                this.overlay.style.top = '0';
+                this.overlay.style.left = '0';
+                this.overlay.style.height = '100%';
+                this.overlay.style.width = '100%';
+                this.overlay.style.zIndex = '100';
+                this.overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+                document.body.appendChild(this.overlay);
+            }
+            checkShouldClose() {
+                setInterval(() => {
+                    if (this.shouldClose) {
+                        this.overlay.style.animation = 'shrink 0.5s ease-in';
+                        this.overlay.style.animationFillMode = 'forwards';
+                        setTimeout(() => {
+                            this.overlay.style.display = 'none';
+                            this.overlay.remove();
+                        }, 500);
+                    }
+                }, 1000);
+            }
+            addElements(...elements) {
+                elements.forEach((element) => {
+                    let top = Math.random() * (this.overlay.clientHeight - element.clientHeight);
+                    let left = Math.random() * (this.overlay.clientWidth - element.clientWidth);
+                    element.style.position = 'absolute';
+                    element.style.top = `${top}px`;
+                    element.style.left = `${left}px`;
+                    this.overlay.appendChild(element);
+                });
+            }
+            checkIfEmpty() {
+                if (this.overlay.childNodes.length === 0) {
+                    this.shouldClose = true;
+                }
+            }
+
+            }
+            
+
+
+    </script>
+</body>
+</html>
