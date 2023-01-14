@@ -47,6 +47,12 @@ input:focus{
 button{
     padding: 1%;
     border-radius: .3vw;
+    border: 1px solid rgb(96, 197, 199);
+    background-color: rgb(96, 197, 199);
+    color: aliceblue;
+    font-size: 1.5vw;
+    translate: 120% -80%;
+    cursor: pointer;
 }
 /*span::before {
     content: "";
