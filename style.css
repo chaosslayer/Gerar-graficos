@@ -6,6 +6,7 @@
 html, body {
     min-width: 100%;
     min-height: 100%;
+    box-sizing: border-box;
 }
 form{
     width: 60%;
@@ -20,6 +21,7 @@ form{
     text-align: center;
 }
 div.allcode{
+    box-sizing: border-box;
 }
 div.container-form{
     display: inline-block;

@@ -76,7 +76,8 @@
                     document.querySelector('.allcode').style.display = "none";
                     var tamanhoInsuficiente = document.createElement("div");
                     tamanhoInsuficiente.style.cssText = `position: absolute; top:50%; left:50%; transform: translate(-50%, -50%); box-shadow:2px 2px 7px rgba(177,177,177,0.5);display: flex; align-items: center; justify-content: center;border-radius:5px;`
-                    var paragrafodeaviso = document.createElement("p.paradeaviso");
+                    var paragrafodeaviso = document.createElement('p');
+                    paragrafodeaviso.classList.add("paradeaviso")
                     paragrafodeaviso.innerHTML = "This page only works on larger devices " +`<br>&#x1F635;&#x1F4AB;<br><span></span>`;
                     document.body.appendChild(tamanhoInsuficiente);
                     tamanhoInsuficiente.appendChild(paragrafodeaviso);
@@ -88,9 +89,21 @@
                 cont = false;
             }
         }
-        var paradeaviso = document.querySelector(".paradeaviso")
         verificarOTamanhoDaTelaEBotarOAviso()
-        function trocarTextoNoclick(){
+        /*var minsize = 500;
+            var tela = screen.availWidth;
+            var available;
+
+            if (minsize>tela){
+                available = false;
+            }
+            else{
+                available = true;
+            }
+            if (!available){
+                var paradeaviso = document.querySelector(".paradeaviso")
+            }*/
+        /*function trocarTextoNoclick(){
             var minsize = 500;
             var tela = screen.availWidth;
             var available;
@@ -112,10 +125,8 @@
                     trocarLingua = true
                 }
             }
-        }
-        paradeaviso.addEventListener("click", ()=>{
-                trocarTextoNoclick()
-            })
+        }*/
+        /*paradeaviso.addEventListener("click", ()=>{trocarTextoNoclick()})*/
         function obterViewportDisponivelWidth(){
           return screen.availWidth;
         }
