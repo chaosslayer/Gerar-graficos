@@ -11,15 +11,14 @@
     <div class="allcode">
         <form  autocomplete="on">
             <div class="container-form">
-                <label for="angulo">
-                  </label>
+                <label for="angulo">Digite o angulo do vento (baseado na rosa dos ventos)</label>
                  <input type="text" id="angulo" autocomplete="dados-do-angulo">
             </div>
             <div class="container-form">
-                <label for="intensidadeDoVento"></label>
+                <label for="intensidadeDoVento">digite a intensidadedade do vento</label>
                 <input type="text" id="intensidadeDoVento" autocomplete="intensidade-do-vento">
             </div><br>
-            <button id="botton-generate-graphic" type="button">garar grafico</button>
+            <button id="botton-generate-graphic" type="button">gerar grafico</button>
         </form>
         
     </div>
@@ -136,6 +135,16 @@
         var allcode =  document.querySelector('.allcode');
         allcode.style.width = obterViewportDisponivelWidth() +  "px"
         allcode.style.height = obterViewportDisponivelHeight() + "px"
+        function pegarElemento(elemento){
+            return document.querySelector(elemento)
+        }
+        function pegarElementos(elemento){
+            return document.querySelectorAll(elemento)
+        }
+        function dividirPorseparador(texto_para_ser_dividido, separador=','){
+            var textoSeparado = texto_para_ser_dividido.split(separador)
+            return textoSeparado
+        }
 
 
         //window.addEventListener('resize', verificarOTamanhoDaTelaEBotarOAviso)
